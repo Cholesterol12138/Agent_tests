@@ -27,15 +27,15 @@ jobs:
         distribution: 'temurin'
 
     - name: Build application
-      run: mvn clean package -DskipTests
+      run: mvn clean package -DskipTests -f examples/java_demo/pom.xml
 
     - name: Run application
-      run: timeout 10 java -cp target/classes com.demo.UserService || true
+      run: timeout 10 java -cp examples/java_demo/target/classes com.demo.UserService || true
 
     - name: Check logs for errors
       run: |
         echo "=== 应用日志 ==="
-        cat logs/application.log || echo "No logs"
+        cat examples/java_demo/logs/application.log || echo "No logs"
         echo "=== 检查完成 ==="
 
     - name: Deploy notification

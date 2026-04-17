@@ -1,0 +1,11 @@
+2024-01-15 10:30:00.000 INFO  [main] com.demo.UserService - 用户服务启动
+2024-01-15 10:30:00.100 INFO  [main] com.demo.UserService - 初始化用户数据库
+2024-01-15 10:30:00.200 INFO  [main] com.demo.UserService - 添加了 2 个用户
+2024-01-15 10:30:00.300 INFO  [main] com.demo.UserService - === 用户服务测试 ===
+2024-01-15 10:30:00.400 INFO  [main] com.demo.UserService - 用户 1: ALICE
+
+2024-01-15 10:30:00.500 ERROR [main] com.demo.UserService - 获取用户信息失败
+java.lang.NullPointerException: Cannot invoke method on null object
+    at com.demo.service.UserService.getUserById(UserService.java:30)
+    at com.demo.controller.UserController.getUser(UserController.java:25)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

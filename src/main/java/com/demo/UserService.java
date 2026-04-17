@@ -20,6 +20,9 @@ public class UserService {
     // BUG: 当用户不存在时返回null，后续调用会NPE
     public String getUserById(String id) {
         User user = userDatabase.get(id);
+        if (user == null) {
+            return "USER_NOT_FOUND";
+        }
         return user.getName().toUpperCase(); // 这里触发NPE
     }
 
